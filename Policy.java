@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 public class Policy {
 
     //instance variables
@@ -101,6 +98,5 @@ public class Policy {
 
     public double getPolHoldBMI() {
         return ((policyHoldersWeight * 703) / Math.pow(policyHoldersHeight, 2));
-    }
-    
+    }    
 }
