@@ -6,7 +6,7 @@ public class Project_John_Gallagher {
     public static void main(String[] args) throws FileNotFoundException {
 
         //Declaring variables
-        int polNumber, polHoldAge;
+        int polNumber, polHoldAge, numOfSmoker = 0;
         String polProvName, polHoldFName, polHoldLName, smkingStat;
         double polHoldHeight, polHoldWeight, polHoldBMI, policyCost = 0;
 
@@ -98,7 +98,13 @@ public class Project_John_Gallagher {
                 System.out.printf("\nPolicyholder’s BMI: %.2f", policy.getPolHoldBMI());
                 System.out.printf("\n\nPolicy Price: %.2f", policyCost);
                 System.out.print("\n\n");
+
+                if (policy.getPolHoldSmkStat().equalsIgnoreCase("smoker"))
+                    numOfSmoker++;
             }
+
+            System.out.println("The number of policies with a smoker is: " + numOfSmoker);
+            System.out.println("The number of policies with a non-smoker is: " + (polList.size() - numOfSmoker));
 
         }
 
