@@ -66,21 +66,21 @@ public class Project_John_Gallagher {
             ArrayList<Policy> polList = new ArrayList<Policy>();
 
             while (input.hasNext()) {
-                int pNumber = input.nextInt();
-                String insurProvName = input.nextLine();
-                String fName = input.nextLine();
-                String lName = input.nextLine();
-                int age = input.nextInt();
-                String smokingStat = input.nextLine();
-                double polHolderHeight = input.nextInt();
-                double polHolderWeight = input.nextInt();
+                polNumber = input.nextInt();
+                polProvName = input.nextLine();
+                polHoldFName = input.nextLine();
+                polHoldLName = input.nextLine();
+                polHoldAge = input.nextInt();
+                smkingStat = input.nextLine();
+                polHoldHeight = input.nextDouble();
+                polHoldWeight = input.nextDouble();
 
                 if (input.hasNext())
                     input.nextLine();
                 if (input.hasNext())
                     input.nextLine();
 
-                polList.add(new Policy(pNumber, insurProvName, fName, lName, age, smokingStat, polHolderHeight, polHolderWeight));
+                polList.add(new Policy(polNumber, polProvName, polHoldFName, polHoldLName, polHoldAge, smkingStat, polHoldHeight, polHoldWeight));
             }
 
             for (Policy policy : polList) {
