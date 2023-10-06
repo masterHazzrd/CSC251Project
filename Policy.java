@@ -2,8 +2,7 @@ public class Policy {
 
     //instance variables
     private int policyNum, policyHoldersAge;
-    private String policyProviderName, policyHoldersFName, policyHolderLName;
-    private boolean policyHoldersSmokingStatus;
+    private String policyProviderName, policyHoldersFName, policyHolderLName, policyHoldersSmokingStatus;
     private double policyHoldersHeight, policyHoldersWeight;
 
     //default constructor
@@ -13,13 +12,13 @@ public class Policy {
         this.policyHoldersFName = "";
         this.policyHolderLName = "";
         this.policyHoldersAge = 0;
-        this.policyHoldersSmokingStatus = false;
+        this.policyHoldersSmokingStatus = "";
         this.policyHoldersHeight = 0.0;
         this.policyHoldersWeight = 0.0;
     }
 
     //parameterized constructor
-    public Policy(int polNum, String provName, String polHoldersFName, String polHoldersLName, int polHoldersAge, boolean polSmkStat, double polHoldersHeight, double polHoldersWeight) {
+    public Policy(int polNum, String provName, String polHoldersFName, String polHoldersLName, int polHoldersAge, String polSmkStat, double polHoldersHeight, double polHoldersWeight) {
         this.policyNum = polNum;
         this.policyProviderName = provName;
         this.policyHoldersFName = polHoldersFName;
@@ -116,7 +115,7 @@ public class Policy {
      * The pHSmkSt sets the policy holders smoking status.
      * @param pHSmkSt Sets policy holders smoking status.
      */
-    public void setPolHoldSmkStat(boolean pHSmkSt) {
+    public void setPolHoldSmkStat(String pHSmkSt) {
         this.policyHoldersSmokingStatus = pHSmkSt;
     }
 
@@ -124,7 +123,7 @@ public class Policy {
      * The getPolHoldSmkStat returns policy holders smoking status.
      * @return Returns policy holders smoking status.
      */
-    public boolean getPolHoldSmkStat() {
+    public String getPolHoldSmkStat() {
         return policyHoldersSmokingStatus;
     }
 
