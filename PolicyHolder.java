@@ -130,4 +130,8 @@ public class PolicyHolder {
         return ((policyHoldersWeight * 703) / Math.pow(policyHoldersHeight, 2));
     }
 
+    public String toString() {
+        return String.format("Policyholder First Name: %s\n" + "Policyholder Last Name: %s\n" + "Policyholder's Age: %d\n" + "Policyholder's Smoking Status: %s\n" + "Policyholder's Height: %.1f inches\n" + "Policyholder's Weight: %.1f pounds\n" + "Policyholder's BMI: %.2f", this.getPolHoldFName() , this.getPolHoldLName(), this.getPolHoldAge(), this.getPolHoldSmkStat(), this.getPolHoldHeight(), this.getPolHoldWeight(), this.getPolHoldBMI()) ;       
+    }
+
 }
