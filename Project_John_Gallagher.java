@@ -59,6 +59,10 @@ public class Project_John_Gallagher {
 
         policyCost = getCost(polHoldAge, smkingStat, polHoldBMI);
 
+        System.out.println();
+        System.out.print(polInfo);
+        System.out.print(polHoldInfo);
+
     }
 
     public static double getCost(int hAge, String holderSmkingStat, double hBMI) {
