@@ -14,117 +14,50 @@ public class Project_John_Gallagher {
 
         Scanner input = new Scanner(System.in);
 
-        Policy pInfo = new Policy();
-
-        if (inputData.exists() == false) {
-
-            System.out.println("Unable to open file or file does not exist");
-            System.out.println("Input data for policy manually");            
-
-            System.out.print("Please enter the Policy Number: ");
-            polNumber = input.nextInt();
-            pInfo.setPolNumber(polNumber);
-
-            input.nextLine();
-
-            System.out.print("Please enter the Provider Name: ");
-            polProvName = input.nextLine();
-            pInfo.setProvName(polProvName);
-
-            System.out.print("Please enter the Policyholder First Name: ");
-            polHoldFName = input.nextLine();
-            pInfo.setPolHoldFName(polHoldFName);
-
-            System.out.print("Please enter the Policyholder Last Name: ");
-            polHoldLName = input.nextLine();
-            pInfo.setPolHoldLName(polHoldLName);
-
-            System.out.print("Please enter the Policyholder’s Age: ");
-            polHoldAge = input.nextInt();
-            pInfo.setPolHoldAge(polHoldAge);
-            input.nextLine();
-
-            System.out.print("Please enter the Policyholder Smoking Status (smoker/non-smoker): ");
-            smkingStat = input.nextLine();
-
-            System.out.print("Please enter the Policyholder Height (in inches): ");
-            polHoldHeight = input.nextDouble();
-            pInfo.setPolHoldHeight(polHoldHeight);
-            
-            System.out.print("Please enter the Policyholder\u2019s Weight (in pounds): ");
-            polHoldWeight = input.nextDouble();
-            pInfo.setPolHoldWeight(polHoldWeight);
-
-            polHoldBMI = pInfo.getPolHoldBMI();
-
-            policyCost = getCost(polHoldAge, smkingStat, polHoldBMI);
-
-        } else {
-
-            input = new Scanner(inputData);
-
-            ArrayList<Policy> polList = new ArrayList<Policy>();
-
-            while (input.hasNext()) {
-                polNumber = input.nextInt();
-                polProvName = input.nextLine();
-                polHoldFName = input.nextLine();
-                polHoldLName = input.nextLine();
-                polHoldAge = input.nextInt();
-                smkingStat = input.nextLine();
-                polHoldHeight = input.nextDouble();
-                polHoldWeight = input.nextDouble();
-
-                if (input.hasNext())
-                    input.nextLine();
-                if (input.hasNext())
-                    input.nextLine();
-
-                polList.add(new Policy(polNumber, polProvName, polHoldFName, polHoldLName, polHoldAge, smkingStat, polHoldHeight, polHoldWeight));
-            }
-
-            for (Policy policy : polList) {
-                System.out.print("\n\n______________________________");
-                System.out.print("\n\n\tPolicy Information");
-                System.out.print("\n______________________________");
-                System.out.print("\n\nPolicy Number: " + policy.getPolNumber());
-                System.out.print("\nProvider Name: " + policy.getProvName());
-                System.out.print("\nPolicyholders First Name:  " + policy.getPolHoldFName());
-                System.out.print("\nPolicyholders Last Name: " + policy.getPolHoldLName());
-                System.out.print("\nPolicyholders Age: " + policy.getPolHoldAge());
-                System.out.print("\nPolicyholders Smoking Status: " + policy.getPolHoldSmkStat());
-                System.out.print("\nPolicyholders Height: " + policy.getPolHoldHeight());
-                System.out.print("\nPolicyholders Weight: " + policy.getPolHoldWeight());
-                System.out.printf("\nPolicyholder’s BMI: %.2f", policy.getPolHoldBMI());
-                System.out.printf("\n\nPolicy Price: %.2f", policyCost);
-                System.out.print("\n\n");
-
-                if (policy.getPolHoldSmkStat().equalsIgnoreCase("smoker"))
-                    numOfSmoker++;
-            }
-
-            System.out.println("The number of policies with a smoker is: " + numOfSmoker);
-            System.out.println("The number of policies with a non-smoker is: " + (polList.size() - numOfSmoker));
-
-        }
-
-        //Fix after getting program to read file
+        PolicyHolder polHoldInfo = new PolicyHolder();
+        Policy polInfo = new Policy();
         
 
-        System.out.print("\n\n______________________________");
-        System.out.print("\n\n\tPolicy Information");
-        System.out.print("\n______________________________");
-        System.out.print("\n\nPolicy Number: " + pInfo.getPolNumber());
-        System.out.print("\nProvider Name: " + pInfo.getProvName());
-        System.out.print("\nPolicyholders First Name:  " + pInfo.getPolHoldFName());
-        System.out.print("\nPolicyholders Last Name: " + pInfo.getPolHoldLName());
-        System.out.print("\nPolicyholders Age: " + pInfo.getPolHoldAge());
-        System.out.print("\nPolicyholders Smoking Status: " + pInfo.getPolHoldSmkStat());
-        System.out.print("\nPolicyholders Height: " + pInfo.getPolHoldHeight());
-        System.out.print("\nPolicyholders Weight: " + pInfo.getPolHoldWeight());
-        System.out.printf("\nPolicyholder’s BMI: %.2f", pInfo.getPolHoldBMI());
-        System.out.printf("\n\nPolicy Price: %.2f", policyCost);
-        System.out.print("\n\n");      
+        System.out.println("Unable to open file or file does not exist");
+        System.out.println("Input data for policy manually");            
+
+        System.out.print("Please enter the Policy Number: ");
+        polNumber = input.nextInt();
+        polInfo.setPolNumber(polNumber);
+
+        input.nextLine();
+
+        System.out.print("Please enter the Provider Name: ");
+        polProvName = input.nextLine();
+        polInfo.setProvName(polProvName);
+
+        System.out.print("Please enter the Policyholder First Name: ");
+        polHoldFName = input.nextLine();
+        polHoldInfo.setPolHoldFName(polHoldFName);
+
+        System.out.print("Please enter the Policyholder Last Name: ");
+        polHoldLName = input.nextLine();
+        polHoldInfo.setPolHoldLName(polHoldLName);
+
+        System.out.print("Please enter the Policyholder’s Age: ");
+        polHoldAge = input.nextInt();
+        polHoldInfo.setPolHoldAge(polHoldAge);
+        input.nextLine();
+
+        System.out.print("Please enter the Policyholder Smoking Status (smoker/non-smoker): ");
+        smkingStat = input.nextLine();
+
+        System.out.print("Please enter the Policyholder Height (in inches): ");
+        polHoldHeight = input.nextDouble();
+        polHoldInfo.setPolHoldHeight(polHoldHeight);
+        
+        System.out.print("Please enter the Policyholder\u2019s Weight (in pounds): ");
+        polHoldWeight = input.nextDouble();
+        polHoldInfo.setPolHoldWeight(polHoldWeight);
+
+        polHoldBMI = polHoldInfo.getPolHoldBMI();
+
+        policyCost = getCost(polHoldAge, smkingStat, polHoldBMI);
 
     }
 
@@ -152,5 +85,4 @@ public class Project_John_Gallagher {
 
         return totPolCost;
     }
-
-}
+}      
