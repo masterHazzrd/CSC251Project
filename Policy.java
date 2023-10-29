@@ -50,5 +50,9 @@ public class Policy {
     public String getProvName() {
         return policyProviderName;
     }
-            
+    
+    public String toString() {
+        return String.format("Policy Number: %s\n" + "Policy Provider: %s\n", this.getPolNumber(), this.getProvName());
+    }
+
 }
